@@ -38,7 +38,14 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use(
+    '/api-docs',
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerSpec, {
+        explorer: true,
+        customCss: '.swagger-ui .topbar { display: none }'
+    })
+);
 
 app.get('/health', (req, res) => {
     res.status(200).json({

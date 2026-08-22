@@ -10,8 +10,12 @@ const options = {
 
         servers: [
             {
-                url: 'http://localhost:3000',
-                description: 'Local development server',
+                url: process.env.NODE_ENV === 'production'
+                    ? 'https://event-pulse-5zvd2plaq-together10.vercel.app'
+                    : 'http://localhost:3000',
+                description: process.env.NODE_ENV === 'production'
+                    ? 'Production server'
+                    : 'Local development server',
             },
         ],
 
