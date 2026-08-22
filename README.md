@@ -120,4 +120,4 @@ Tests are implemented using Jest and Supertest and include unit and integration 
 
 ## Live Deployment Link
 
-Vercel deployment link will be added after deployment.
+https://event-pulse-qll40w0km-together10.vercel.app
