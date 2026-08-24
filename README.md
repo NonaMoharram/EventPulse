@@ -119,5 +119,4 @@ npm test
 Tests are implemented using Jest and Supertest and include unit and integration tests.
 
 ## Live Deployment Link
-
 https://event-pulse-5zvd2plaq-together10.vercel.app/
