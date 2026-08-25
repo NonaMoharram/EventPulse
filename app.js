@@ -38,12 +38,20 @@ app.use((req, res, next) => {
     next();
 });
 
+const CSS_URL = "https://cloudflare.com";
+const JS_URL = [
+    "https://cloudflare.com",
+    "https://cloudflare.com"
+];
+
 app.use(
     '/api-docs',
     swaggerUi.serve,
     swaggerUi.setup(swaggerSpec, {
         explorer: true,
-        customCss: '.swagger-ui .topbar { display: none }'
+        customCss: '.swagger-ui .topbar { display: none }',
+        customCssUrl: CSS_URL,
+        customJs: JS_URL
     })
 );
 
