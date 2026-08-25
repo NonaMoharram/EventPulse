@@ -47,13 +47,28 @@ app.use(
     })
 );
 
-app.get('/health', (req, res) => {
-    res.status(200).json({
-        status: 'ok',
-        environment: process.env.NODE_ENV || 'development',
-        uptime: process.uptime(),
-        database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
-    });
+// دالة الـ health المحدثة والآمنة لبيئة Vercel والسيرفر الداخلي
+app.get('/health', async (req, res) => {
+    try {
+        // إذا كان الموقع يعمل على سيرفر فيرسيل الحقيقي (production)، أجبِره على الاتصال أولاً
+        if (process.env.NODE_ENV === 'production') {
+            await connectDB();
+        }
+
+        res.status(200).json({
+            status: 'ok',
+            environment: process.env.NODE_ENV || 'development',
+            uptime: process.uptime(),
+            database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
+        });
+    } catch (error) {
+        res.status(500).json({
+            status: 'error',
+            environment: process.env.NODE_ENV || 'development',
+            database: 'disconnected',
+            message: error.message
+        });
+    }
 });
 
 app.use('/api/auth', authRoutes);
