@@ -13,7 +13,7 @@ const options = {
         servers: [
             {
                 url: process.env.NODE_ENV === 'production'
-                    ? 'https://vercel.app'
+                    ? 'https://event-pulse-theta.vercel.app'
                     : 'http://localhost:3000',
                 description: process.env.NODE_ENV === 'production'
                     ? 'Production server'
