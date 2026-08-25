@@ -38,11 +38,7 @@ app.use((req, res, next) => {
     next();
 });
 
-const CSS_URL = "https://cloudflare.com";
-const JS_URL = [
-    "https://cloudflare.com",
-    "https://cloudflare.com"
-];
+const CSS_URL = "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css";
 
 app.use(
     '/api-docs',
@@ -50,8 +46,7 @@ app.use(
     swaggerUi.setup(swaggerSpec, {
         explorer: true,
         customCss: '.swagger-ui .topbar { display: none }',
-        customCssUrl: CSS_URL,
-        customJs: JS_URL
+        customCssUrl: CSS_URL
     })
 );
 
