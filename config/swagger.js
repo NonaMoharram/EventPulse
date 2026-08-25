@@ -1,4 +1,5 @@
 const swaggerJsdoc = require('swagger-jsdoc');
+const path = require('path');
 
 const options = {
     definition: {
@@ -9,11 +10,10 @@ const options = {
             description: 'Comprehensive Backend RESTful API for Event Registration and Management Platform',
         },
 
-        // استخدام الـ Relative Path (/) يجعل التوثيق يقرأ رابط السيرفر الحالي تلقائياً أياً كان اسمه على فيرسيل دون تعليق
         servers: [
             {
                 url: process.env.NODE_ENV === 'production'
-                    ? '/' 
+                    ? 'https://vercel.app'
                     : 'http://localhost:3000',
                 description: process.env.NODE_ENV === 'production'
                     ? 'Production server'
@@ -31,7 +31,7 @@ const options = {
             },
         },
     },
-    apis: ['./routes/*.js'],
+    apis: [path.join(__dirname, '../routes/*.js')],
 };
 
 module.exports = swaggerJsdoc(options);
