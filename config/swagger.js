@@ -31,7 +31,8 @@ const options = {
             },
         },
     },
-    apis: [path.join(__dirname, '../routes/*.js')],
+    apis: ['./routes/*.js', './routes/authRoutes.js', './routes/eventRoutes.js', './routes/registrationRoutes.js', './routes/announcementRoutes.js'],
 };
 
 module.exports = swaggerJsdoc(options);
+
