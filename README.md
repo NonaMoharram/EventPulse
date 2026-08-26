@@ -66,7 +66,7 @@ EYOUTH-30803030200829-EventPulse/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/NonaMoharram/EventPulse.git
+git clone https://github.com/NonaMoharram/EventPulse
 cd EventPulse
 ```
 
@@ -119,4 +119,4 @@ npm test
 Tests are implemented using Jest and Supertest and include unit and integration tests.
 
 ## Live Deployment Link
-https://event-pulse-5zvd2plaq-together10.vercel.app/
+https://event-pulse-theta.vercel.app
