@@ -120,4 +120,4 @@ Tests are implemented using Jest and Supertest and include unit and integration 
 
 ## Live Deployment Link
 
-https://event-pulse-5zvd2plaq-together10.vercel.app/
+https://event-pulse-theta.vercel.app
